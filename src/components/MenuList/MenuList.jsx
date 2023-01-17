@@ -3,10 +3,26 @@ import s from "./style.module.css";
 export function MenuList(props) {
   return (
     <div className={s.container}>
-      <MenuListItem difficulty="Low" />
-      <MenuListItem difficulty="Medium" />
-      <MenuListItem difficulty="High" />
-      <MenuListItem difficulty="Hell No!" />
+      <MenuListItem
+        isSelected={props.difficulty === "Low"}
+        onClick={props.onItemClick}
+        difficulty="Low"
+      />
+      <MenuListItem
+        isSelected={props.difficulty === "Medium"}
+        onClick={props.onItemClick}
+        difficulty="Medium"
+      />
+      <MenuListItem
+        isSelected={props.difficulty === "High"}
+        onClick={props.onItemClick}
+        difficulty="High"
+      />
+      <MenuListItem
+        isSelected={props.difficulty === "Hell No!"}
+        onClick={props.onItemClick}
+        difficulty="Hell No!"
+      />
     </div>
   );
 }

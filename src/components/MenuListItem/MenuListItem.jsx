@@ -8,16 +8,26 @@ export const MenuListItem = (props) => {
   function deactivate() {
     setIsHover(false);
   }
-  console.log("isHovered ", isHovered);
+  // console.log("isHovered ", isHovered);
   function getBGC() {
     if (isHovered) {
       return "#a5e9ff";
     } else {
-      return "#eff0ef";
+      if (props.isSelected) {
+        return "#26baea";
+      } else {
+        return "#eff0ef";
+      }
     }
   }
+
+  const onItemClick = () => {
+    props.onClick(props.difficulty);
+  };
+
   return (
     <div
+      onClick={onItemClick}
       className={s.container}
       onMouseEnter={activate}
       onMouseLeave={deactivate}
